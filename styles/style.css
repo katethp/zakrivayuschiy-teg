@@ -15,6 +15,385 @@
 */
 
 .page {
+  margin: 0 auto;
   min-inline-size: 320px;
+  inline-size: 100%;
   min-block-size: 100dvb;
+  font-family: var(--main-font, sans-serif);
+  font-variation-settings: "wght" var(--main-font-weight, 400);
+  color: var(--main-color, #000000);
+  background-color: var(--main-bg-color, #ffffff);
+  background-image: var(--bg-image);
+  background-repeat: repeat;
+  background-size: auto 4px;
+  background-attachment: fixed;
+}
+
+@media (375px < width) {
+  .page {
+    min-inline-size: 376px;
+  }
+}
+
+.header {
+  inline-size: 100%;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  margin-block-start: 100px;
+  margin-block-end: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  justify-content: center;
+  align-items: center;
+  padding-block-start: clamp(120px, 122px, 136px);
+  background-color: var(--main-bg-color, #ffffff);
+  border: 2px solid var(--main-color, #000000);
+  padding-block-end: 21px;
+}
+
+@media (375px < width) {
+  .header {
+    min-inline-size: 376px;
+    max-inline-size: 700px;
+    gap: 29px;
+  }
+}
+
+.header__logo {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  color: currentColor;
+  font-family: var(--accent-font, "PressStart2P");
+  font-weight: var(--main-font-weight, 400);
+  text-decoration: none;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-transform: uppercase;
+  font-style: normal;
+  line-height: 49px;
+}
+
+.header__title {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  color: currentColor;
+  font-family: var(--accent-font, "PressStart2P");
+  font-weight: var(--main-font-weight, 400);
+  text-transform: uppercase;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  line-height: 14px;
+}
+
+@media (375px < width) {
+  .header__logo {
+    padding-block-start: 30px;
+  }
+}
+
+.header__theme-menu {
+  padding-block-start: 5px;
+  padding-inline-start: 16px;
+}
+
+@media (375px < width) {
+  .header__theme-menu {
+    padding-block-start: 1px;
+  }
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  justify-content: flex-start;
+}
+
+.theme-menu__button {
+  background-color: inherit;
+  border: none;
+  color: currentColor;
+  font-family: var(--accent-font, "PressStart2P");
+  font-weight: var(--main-font-weight, 400);
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 14px;
+  position: relative;
+  opacity: 1;
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+  cursor: pointer;
+}
+
+.theme-menu__button:disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button::after {
+  content: "";
+  display: block;
+  inline-size: 100%;
+  block-size: 2px;
+  background-color: currentColor;
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 80%;
+  margin-block-start: 3px;
+  width: 0%;
+  transition: width 0.3s;
+  transition-timing-function: ease;
+}
+
+.theme-menu__button:focus-visible::after {
+  width: 100%;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  display: block;
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: -20px;
+  animation-name: arrow-move;
+  animation-duration: 0.5s;
+  animation-timing-function: easy-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
+.content {
+  inline-size: 100%;
+
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+}
+
+@media (375px < width) {
+  .content {
+    min-inline-size: 376px;
+    max-inline-size: 700px;
+  }
+}
+
+.content__card {
+  background-color: var(--main-bg-color, #ffffff);
+  border-block-start: 2px solid var(--main-color, #000000);
+  border-inline-start: 2px solid var(--main-color, #000000);
+  border-inline-end: 2px solid var(--main-color, #000000);
+}
+
+.content__card-title {
+  padding-block-start: var(--title-top-pad, 4px);
+  padding-block-end: var(--title-bottome-pad, 6px);
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  font-family: var(--main-font, "Inter-Variable"), fantasy;
+  font-variation-settings: "wght" var(--accent-font-weight, 700);
+  font-size: 18px;
+  line-height: 121%;
+  text-align: start;
+}
+
+@media (width > 375px) {
+  .content__card-title {
+    padding-block-start: var(--title-top-pad);
+    padding-block-end: var(--title-bottome-pad);
+  }
+}
+
+.content__card-picture {
+  border-block-start: 2px solid var(--main-color, #000000);
+  inline-size: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding: 23px;
+}
+
+.content__card-paragraph {
+  font-family: var(--main-font, "Inter-Variable"), fantasy;
+  font-variation-settings: "wght" var(--main-font-weight, 400);
+  text-align: start;
+  font-weight: var(--main-font-weight, 400);
+  font-size: 18px;
+  line-height: 117%;
+  letter-spacing: 0.8px;
+}
+
+.content__card-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: end;
+  background-color: var(--main-bg-color, #ffffff);
+  border-block-end: 2px solid var(--main-color, #000000);
+  border-inline-start: 2px solid var(--main-color, #000000);
+  border-inline-end: 2px solid var(--main-color, #000000);
+  padding-inline-end: 30px;
+  padding-block-end: 25px;
+}
+
+@media (width > 375px) {
+  .content__card-buttons {
+    gap: 9px;
+  }
+}
+
+.card__icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: inherit;
+  transition: outline 0.3s ease;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.card__icon-button:focus {
+  border: none;
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--main-color, #000000);
+}
+
+.card__like-button {
+  position: relative;
+  min-inline-size: 126px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  background-color: var(--main-bg-color, #ffffff);
+  color: var(--main-color, #000000);
+  border: 2px solid var(--main-color, #000000);
+  transition: box-shadow 0.3s ease, color 1s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 var(--main-color, #000000);
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  background-color: var(--main-color, #000000);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+/*заданы две координаты для position:absolute*/
+
+.button:hover::after {
+  transform: translateX(0);
+}
+
+.button:hover {
+  color: var(--main-bg-color, #ffffff);
+}
+
+.button__text {
+  font-family: var(--accent-font, "PressStart2P", sans-serif);
+  font-size: 14px;
+  line-height: 90%;
+  font-weight: var(--main-font-weight, 400);
+  text-align: center;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+@media (375px < width) {
+  .button__text {
+    display: inline-block;
+  }
+}
+
+.save {
+  display: flex;
+  justify-content: center;
+  padding-block-start: 52px;
+  padding-block-end: 100px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+}
+
+@media (375px < width) {
+  .save {
+    min-inline-size: 376px;
+    max-inline-size: 700px;
+  }
+}
+
+.save__button {
+  position: relative;
+  min-inline-size: 306px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  padding-block-start: 13px;
+  padding-block-end: 13px;
+  padding-inline-start: 17px;
+  padding-inline-end: 17px;
+}
+
+@media (width > 375px) {
+  .save__button {
+    /*min-inline-size: 333px;*/
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    padding-block-start: 13px;
+    padding-block-end: 13px;
+    padding-inline-start: 17px;
+    padding-inline-end: 17px;
+  }
+}
+
+.floppy {
+  inline-size: 28px;
+  aspect-ratio: 1/1;
+  position: relative;
+  z-index: 1;
+}
+
+@media (375px < width) {
+  .floppy {
+    inline-size: 21px;
+    margin-inline-end: 8px;
+  }
 }
