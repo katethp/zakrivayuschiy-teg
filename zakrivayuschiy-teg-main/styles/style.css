@@ -31,7 +31,7 @@
 
 @media (375px < width) {
   .page {
-    min-inline-size: 376px;
+    min-inline-size: 375px;
   }
 }
 
@@ -46,7 +46,7 @@
   gap: 21px;
   justify-content: center;
   align-items: center;
-  padding-block-start: clamp(120px, 122px, 136px);
+  padding-block-start: clamp(120px, 120px, 136px);
   background-color: var(--main-bg-color, #ffffff);
   border: 2px solid var(--main-color, #000000);
   padding-block-end: 21px;
@@ -54,7 +54,7 @@
 
 @media (375px < width) {
   .header {
-    min-inline-size: 376px;
+    min-inline-size: 375px;
     max-inline-size: 700px;
     gap: 29px;
   }
@@ -86,7 +86,7 @@
 
 @media (375px < width) {
   .header__logo {
-    padding-block-start: 30px;
+    padding-block-start: 28px;
   }
 }
 
@@ -200,7 +200,7 @@
   font-family: var(--main-font, "Inter-Variable"), fantasy;
   font-variation-settings: "wght" var(--accent-font-weight, 700);
   font-size: 18px;
-  line-height: 121%;
+  line-height: 19px;
   text-align: start;
 }
 
@@ -223,7 +223,7 @@
   display: flex;
   flex-direction: column;
   gap: 27px;
-  padding: 23px;
+  padding: 20px;
 }
 
 .content__card-paragraph {
