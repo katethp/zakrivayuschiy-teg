@@ -92,7 +92,7 @@
 
 .header__theme-menu {
   padding-block-start: 5px;
-  padding-inline-start: 16px;
+  padding-inline-start: 18px;
 }
 
 @media (375px < width) {
@@ -159,7 +159,7 @@
   display: block;
   position: absolute;
   inset-block-start: 0;
-  inset-inline-start: -20px;
+  inset-inline-start: -200px;
   animation-name: arrow-move;
   animation-duration: 0.5s;
   animation-timing-function: easy-in-out;
@@ -217,13 +217,14 @@
   aspect-ratio: 1/1;
   object-fit: cover;
   object-position: center;
+
 }
 
 .content__card-text {
   display: flex;
   flex-direction: column;
   gap: 27px;
-  padding: 20px;
+  padding: 23px;
 }
 
 .content__card-paragraph {
@@ -232,8 +233,7 @@
   text-align: start;
   font-weight: var(--main-font-weight, 400);
   font-size: 18px;
-  line-height: 117%;
-  letter-spacing: 0.8px;
+  padding-left: 3px;
 }
 
 .content__card-buttons {
@@ -245,13 +245,13 @@
   border-block-end: 2px solid var(--main-color, #000000);
   border-inline-start: 2px solid var(--main-color, #000000);
   border-inline-end: 2px solid var(--main-color, #000000);
-  padding-inline-end: 30px;
+  padding-inline-end: 25px;
   padding-block-end: 25px;
 }
 
 @media (width > 375px) {
   .content__card-buttons {
-    gap: 9px;
+    gap: 2px;
   }
 }
 
@@ -325,7 +325,6 @@
 .button__text {
   font-family: var(--accent-font, "PressStart2P", sans-serif);
   font-size: 14px;
-  line-height: 90%;
   font-weight: var(--main-font-weight, 400);
   text-align: center;
   display: block;
