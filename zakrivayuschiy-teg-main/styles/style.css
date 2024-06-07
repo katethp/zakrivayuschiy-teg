@@ -238,12 +238,6 @@
 }
 
 
-@media (min-width: 376px) {
-  .content__card-paragraph {
-    display: none;
-  }
-}
-
 
 .content__card-buttons {
   display: flex;
