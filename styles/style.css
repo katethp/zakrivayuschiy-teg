@@ -56,7 +56,7 @@
   .header {
     min-inline-size: 375px;
     max-inline-size: 700px;
-    gap: 29px;
+    gap: 21px;
   }
 }
 
@@ -86,7 +86,7 @@
 
 @media (375px < width) {
   .header__logo {
-    padding-block-start: 28px;
+    padding-block-start: 30px;
   }
 }
 
@@ -180,7 +180,7 @@
 
 @media (375px < width) {
   .content {
-    min-inline-size: 376px;
+    min-inline-size: 375px;
     max-inline-size: 700px;
   }
 }
@@ -234,7 +234,10 @@
   font-weight: var(--main-font-weight, 400);
   font-size: 18px;
   padding-left: 3px;
+  Line-height: 22px;
 }
+
+
 
 .content__card-buttons {
   display: flex;
@@ -251,7 +254,7 @@
 
 @media (width > 375px) {
   .content__card-buttons {
-    gap: 2px;
+    gap: 1px;
   }
 }
 
@@ -370,18 +373,14 @@
 
 @media (width > 375px) {
   .save__button {
-    /*min-inline-size: 333px;*/
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    align-items: center;
-    justify-content: center;
-    padding-block-start: 13px;
-    padding-block-end: 13px;
-    padding-inline-start: 17px;
-    padding-inline-end: 17px;
+    flex-direction: column;
+    max-width: 306px;
+    width: 100%;
+    max-height: 80px;
+    height: 100%;
+    padding-bottom: 12.5px;
   }
-}
+} 
 
 .floppy {
   inline-size: 28px;
